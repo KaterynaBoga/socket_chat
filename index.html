@@ -1,0 +1,102 @@
+<!-- <!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Socket.io</title>
+</head>
+<body>
+	<h1>Hello Word!</h1>
+</body>	
+</html> -->
+
+<!--2-->
+<!-- <!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Socket.io</title>
+	<script src="/socket.io/socket.io.js"></script>
+</head>
+<script>
+	var socket = io();//запускает приложение socket.io
+</script>
+<body>
+<h1>Hello Word!</h1>
+</body>	
+</html> -->
+
+<!--3 Обработка событий-->
+<!-- <!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Socket.io</title>
+	<script src="/socket.io/socket.io.js"></script>
+</head>
+<script>
+	var socket = io();
+	socket.on('message', function(data) {//native событие когда сервер высылает данные и данные попали в функцию(стиль передачи продолжений)
+		document.write(data)//пишет у клиента 
+	});
+</script>
+<body>
+<h1>Hello Word!</h1>
+</body>	
+</html> -->
+
+<!--4 Добавление пользовательских событий-->
+<!-- <!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Socket.io</title>
+	<script src="/socket.io/socket.io.js"></script>
+</head>
+<script>
+	var socket = io();
+	socket.on('myEvent', function(data) {//native событие когда сервер высылает данные и данные попали в функцию(стиль передачи продолжений)
+		console.log(data);
+		document.write(data.description)//пишет у клиента 
+	});
+</script>
+<body>
+<h1>Hello Word!</h1>
+</body>	
+</html> -->
+
+<!--5 Получение событий от клиента-->
+<!-- <!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Socket.io</title>
+	<script src="/socket.io/socket.io.js"></script>
+</head>
+<script>
+	var socket = io();
+	socket.emit('clientEvent', 'This event from client');
+</script>
+<body>
+<h1>Hello Word!</h1>
+</body>	
+</html> -->
+
+<!--6 Широковещание - посыл сообщений всем подключенным клиентам-->
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Socket.io</title>
+	<script src="/socket.io/socket.io.js"></script>
+</head>
+<script>
+	var socket = io();
+	socket.on('broadcast', function(data) {
+		document.body.innerHTML = '';
+		document.write(data.description);
+	});
+</script>
+<body>
+<h1>Hello Word!</h1>
+</body>	
+</html>
